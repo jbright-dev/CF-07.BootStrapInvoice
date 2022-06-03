@@ -20,10 +20,6 @@
 ![Solution](img/Solution.png)<hr>
 
 ## Getting Started
-- Adding formatting practices not included in tutorial video
-- Adding images to Readme
-- Developing sound documentation practices
-- Properly triggering AzureFunction
 
 ## Table of Contents <hr>
 

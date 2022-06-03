@@ -1,0 +1,139 @@
+<!--When presented with a project speficication in html think in rows and columns-->
+<!--Start with the Bootstrap Base Template-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Invoice From Idea Foundry</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link href="css/site.css" rel="stylesheet">
+    <!--Don't forget to add and link your style sheet-->
+    
+</head>
+
+<body>
+    <!--create a wrapper div, this is also our container, that surrounds the document in a border, centers it on the page, and -->
+    <div class="container rounded p-2 border border-2">
+        <!--create a flex box for our button and justify it at the end; fun fact rows are natively flex boxed-->
+        <div class="d-flex justify-content-end mt-3 d-print-none"><!--the d-print-none element removes the content in the print preview-->
+            <!-- To give our button the print to pdf function, simply add the onclick element-->
+            <button type="button" class="btn btn-dark" onclick="window.print()">Print this Page</button>
+        </div><!--This Div contains our button so to start our invoice we'll create a row div with two column divs-->        
+        <div class="row align-items-center"><!--rows, which align horizontally are justified-->            
+            <!--columns, unlike rows, are not flex boxes so we'll need to add that element -->
+            <div class="col-sm-7 d-flex justify-content-start">
+                <img src="/img/IdeaFoundryLogo.png" title="Idea Foundry Logo"alt="Idea Foundry Logo" class="img-fluid"><!--img fluid makes our image responsive-->
+            </div>
+            <div class="col-sm-5 d-flex justify-content-sm-end justify-content-start "><!--columns, which align vertically are aligned--> 
+                <strong>Customer:</strong>&nbsp;4908<!--Strong is the prefered method over the <b> tag due to it being semantic; and we use nbsp-->
+            </div>
+        </div><!--This Div contins our first row-->
+        <hr>
+        <div class="row row-cols-1 row-cols-sm-2"><!--using row-cols will stack all rows into one column at all breakpoints -->
+            <div class="col-sm-6 d-flex justify-content-start">
+                <strong>Date:</strong>&nbsp;5/12/2021
+            </div>
+            <div class="col-sm-6 d-flex justify-content-sm-end justify-content-start">
+                <strong>Invoice No:</strong>&nbsp;00001
+            </div>
+        </div>
+            <hr>
+            <!--Moving on the the Due to and Pay from section, this will be the saem as our date and invoice, a row with two columns-->
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col-6 d-flex justify-content-start">
+                    <div>
+                        <strong>Invoice To:</strong><br>
+                        <address class="address"><!--Whenever we're typing addresses use the semantic address element-->
+                            Mark Davis<br>
+                            3333 Al Davis Way <br>
+                            Las Vegas, NV 89118
+                        </address>
+                    </div>
+                </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div>
+                            <strong>Pay To:</strong><br>
+                            <address class="address"><!--Whenever we're typing addresses use the semantic address element-->
+                                SOD Band Alumni Club<br>
+                                P.O. Box 1461<br>
+                                Ridgeland, MS 39158
+                            </address>
+                        </div>
+                    </div>
+                    </div>
+                <div class="row table-responsive"><!--table-responsive allows us to scroll horizontally-->
+                    <table class="table table-striped table-bordered"><!--the basic components of a table are head, body, and foot-->
+                        <thead class="thead-dark">
+                            <tr><!--to add the columns for our headers we add the tr element-->
+                                <th>Service</th><!--inside of headers we have table headers-->
+                                <th>Description</th>
+                                <th>Rate</th>
+                                <th>QTY</th>
+                                <th class="text-end">Amount</th>
+                            </tr>                        
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Design</td>
+                                <td>Website Design</td>
+                                <td>$60.00</td>
+                                <td>10</td>
+                                <td class="text-end">$600.00</td>                            
+                            </tr>
+                            <tr>
+                                <td>Development</td>
+                                <td>Website Development</td>
+                                <td>$150.00</td>
+                                <td>10</td>
+                                <td class="text-end">$1,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>Deployment</td>
+                                <td>Deployment and Hosting</td>
+                                <td>$450.00</td>
+                                <td>1</td>
+                                <td class="text-end">$450.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot><!--table footers aren't required-->
+                            <tr>
+                                <td colspan="4">Subtotal</td><!--the colspan element allows a cell to take up multiple columns-->
+                                <td class="text-end">$2,550.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Tax</td>
+                                <td class="text-end">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Total</td>
+                                <td class="text-end">$2,550.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            <footer>
+                <div class="row">
+                    <div class="col-12">
+                        <p>                            
+                            <strong>NOTE:</strong>&nbsp;This is a computer generated receipt and does not require a signature
+                        </p>
+                    </div>
+                </div>
+            </footer>    
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
