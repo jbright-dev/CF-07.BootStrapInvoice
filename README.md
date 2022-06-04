@@ -113,7 +113,23 @@ Extensions
   - tables, like rows and columns, have a specifict way of changing content position; this is the text-end class
 
 ### Table Body
-- 
+- Create a tr element
+- within the tr element create four td, or table desctiption, elements
+  - these will house our table descriptions
+  - create the final td element with a class of text-en
+  - follow this procedure for the development and deployment rows
+
+### Table Footer
+- Create a tr element
+- Within the tr element create a td element with a colspan of 4, the text will be Subtotal
+  - the colspan element allows a cell to take up multiple columns
+- Create another td element with a class of text end, remembe this is for our amount column
+- Repeat this for the tax and total rows
+<hr>
+
+## Adding our note
+- Outside of the table, create a row div and within it create a 12 unit column div
+- using the strong semantic element and a non-breaking space, create our note
 <hr>
 
 ## Project References
